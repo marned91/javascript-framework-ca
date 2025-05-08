@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { TProduct } from '../types/product'
+import Home from '../assets/home.png'
 
 export function HomePage() {
   const [products, setProducts] = useState<TProduct[]>([])
@@ -22,17 +23,25 @@ export function HomePage() {
 
   return (
     <div>
+      <div>
+        <img
+          src={Home}
+          alt="Black and white image of a young man"
+          className="w-full h-auto"
+        />
+      </div>
+      <div className="p-15 bg-primary"></div>
       {loading ? (
         <p className="text-center pt-10 font-main">Loading products...</p>
       ) : (
-        <ul>
+        <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {products.map((product) => (
             <li key={product.id}>
+              <p>{product.title}</p>
               <img
                 src={product.image.url}
                 alt={product.image.alt || product.title}
               />
-              <p>{product.title}</p>
             </li>
           ))}
         </ul>
