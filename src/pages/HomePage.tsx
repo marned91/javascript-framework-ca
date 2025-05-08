@@ -23,11 +23,17 @@ export function HomePage() {
   return (
     <div>
       {loading ? (
-        <p className="text-center pt-10">Loading products...</p>
+        <p className="text-center pt-10 font-main">Loading products...</p>
       ) : (
-        <ul className=" m-auto grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <ul>
           {products.map((product) => (
-            <li key={product.id}>{product.title}</li>
+            <li key={product.id}>
+              <img
+                src={product.image.url}
+                alt={product.image.alt || product.title}
+              />
+              <p>{product.title}</p>
+            </li>
           ))}
         </ul>
       )}
