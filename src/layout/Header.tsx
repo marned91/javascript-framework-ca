@@ -1,45 +1,87 @@
-import { useLocation, Link, NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import Logo from '../assets/logo.png'
+import { useState } from 'react'
 
 export function Header() {
-  const location = useLocation()
-  const isHomePage = location.pathname === '/'
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header>
-      <div>
+    <header className="bg-white shadow-md relative z-20">
+      <div className="max-w-screen-xl mx-auto px-4 py-4 flex items-center justify-between relative">
         <Link to="/">
-          <img src={Logo} alt="Logo" />
+          <img src={Logo} alt="Logo" className="h-25" />
         </Link>
+        <nav className="hidden sm:block absolute left-1/2 transform -translate-x-1/2">
+          <ul className="flex space-x-6 text-sm font-navButtons tracking-wide uppercase">
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? 'border-b-2 border-black' : ''
+                }
+              >
+                HOME
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? 'border-b-2 border-black' : ''
+                }
+              >
+                CONTACT
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/cart"
+                className={({ isActive }) =>
+                  isActive ? 'border-b-2 border-black' : ''
+                }
+              >
+                CART
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+        <button
+          className="sm:hidden"
+          aria-label="Open menu"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
-      <nav>
-        <ul>
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? 'active' : '')}
-            >
-              HOME
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) => (isActive ? 'active' : '')}
-            >
-              CONTACT
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/cart"
-              className={({ isActive }) => (isActive ? 'active' : '')}
-            >
-              CART
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+      {isMenuOpen && (
+        <nav className="sm:hidden px-4 pb-4">
+          <ul className="flex flex-col gap-2 text-sm font-navButtons tracking-wide uppercase">
+            <li>
+              <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
+                HOME
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
+                CONTACT
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/cart" onClick={() => setIsMenuOpen(false)}>
+                CART
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   )
 }
