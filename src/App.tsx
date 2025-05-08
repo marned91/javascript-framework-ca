@@ -1,6 +1,5 @@
-import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { Layout } from './layout/layout'
+import { Layout } from './layout/Layout'
 import { HomePage } from './pages/HomePage'
 import { CartPage } from './pages/CartPage'
 import { CheckoutSuccessPage } from './pages/CheckoutSuccessPage'

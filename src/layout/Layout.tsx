@@ -1,6 +1,6 @@
-import { Header } from './header'
+import { Header } from './Header'
 import { Outlet } from 'react-router-dom'
-import { Footer } from './footer'
+import { Footer } from './Footer'
 
 export function Layout() {
   return (

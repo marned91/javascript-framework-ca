@@ -2,7 +2,7 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-display: 'Oxygen', 'sans-serif';
+  --font-main: 'Oxygen', 'sans-serif';
   --font-largeHeadline: 'Urbanist', 'sans-serif';
   --font-mediumHeadline: 'Quicksand', 'sans-serif';
   --font-navButtons: 'DM Sans', 'sans-serif';
