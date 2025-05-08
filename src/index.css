@@ -3,8 +3,8 @@
 
 @theme {
   --font-main: 'Oxygen', 'sans-serif';
-  --font-largeHeadline: 'Urbanist', 'sans-serif';
-  --font-mediumHeadline: 'Quicksand', 'sans-serif';
+  --font-large: 'Urbanist', 'sans-serif';
+  --font-medium: 'Quicksand', 'sans-serif';
   --font-navButtons: 'DM Sans', 'sans-serif';
 
   --breakpoint-3xl: 120rem;
@@ -15,7 +15,6 @@
 
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
-  /* ... */
 }
 
 @layer utilities {
