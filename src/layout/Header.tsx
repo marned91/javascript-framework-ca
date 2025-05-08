@@ -62,7 +62,13 @@ export function Header() {
         </button>
       </div>
       {isMenuOpen && (
-        <nav className="sm:hidden px-4 pb-4">
+        <nav
+          className="
+      sm:hidden px-4 pb-4
+      transition-all duration-300 ease-out
+      animate-fadeIn
+    "
+        >
           <ul className="flex flex-col items-end gap-2 text-sm font-navButtons tracking-wide uppercase">
             <li>
               <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
