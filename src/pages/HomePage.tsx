@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import type { TProduct } from '../types/product'
 import { ProductCard } from '../components/ProductCard'
 import { HeroSection } from '../components/HeroSection'
+import { SearchBar } from '../components/SearchBar'
 
 export function HomePage() {
   const [products, setProducts] = useState<TProduct[]>([])
@@ -36,15 +37,7 @@ export function HomePage() {
           productSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
         }
       />
-      <div className="bg-primary p-10">
-        <input
-          type="text"
-          value={search}
-          onChange={(event) => setSearch(event.target.value)}
-          placeholder="Search for a product..."
-          className="w-full bg-white max-w-md p-2 rounded"
-        />
-      </div>
+      <SearchBar value={search} onChange={setSearch} />
       <section ref={productSectionRef}>
         {loading ? (
           <p>Loading products...</p>
