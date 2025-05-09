@@ -5,7 +5,13 @@ import Home from '../assets/home.png'
 export function HomePage() {
   const [products, setProducts] = useState<TProduct[]>([])
   const [loading, setLoading] = useState(true)
+  const [search, setSearch] = useState('')
+
   const productSectionRef = useRef<HTMLElement | null>(null)
+
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(search.toLowerCase())
+  )
 
   useEffect(() => {
     async function fetchProducts() {
@@ -25,8 +31,8 @@ export function HomePage() {
   return (
     <div>
       <div className="relative">
-        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 text-center z-10">
-          <h1 className="text-3xl font-semibold max-w-md mx-auto">
+        <div className="absolute top-1/10 sm:top-1/3 left-1/2 transform -translate-x-1/2 text-center z-10 bg-white/50 p-4 rounded w-full sm:max-w-md mx-auto">
+          <h1 className="text-xl md:text-3xl/12 font-large font-semibold">
             Everything you need, in one place, just for YOU!
           </h1>
           <button
@@ -41,19 +47,30 @@ export function HomePage() {
         <img
           src={Home}
           alt="Black and white image of a young man"
-          className="w-full h-auto"
+          className="w-full h-full"
         />
       </div>
-      <div className="bg-primary p-10"></div>
+      <div className="bg-primary p-10">
+        <input
+          type="text"
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          placeholder="Search for a product..."
+          className="w-full bg-white max-w-md p-2 rounded"
+        />
+      </div>
       <section ref={productSectionRef}>
         {loading ? (
           <p>Loading products...</p>
         ) : (
-          <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {products.map((product) => (
+          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 p-10 relative">
+            {filteredProducts.map((product) => (
               <li key={product.id}>
-                <p>{product.title}</p>
+                <p className="font-medium text-2xl font-semibold absolute bg-white/70 p-4">
+                  {product.title}
+                </p>
                 <img
+                  className="w-full h-70 object-cover rounded shadow-xl"
                   src={product.image.url}
                   alt={product.image.alt || product.title}
                 />
