@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import type { TProduct } from '../types/product'
 import Home from '../assets/home.png'
+import { ProductCard } from '../components/ProductCard'
 
 export function HomePage() {
   const [products, setProducts] = useState<TProduct[]>([])
@@ -65,16 +66,7 @@ export function HomePage() {
         ) : (
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 p-10 relative">
             {filteredProducts.map((product) => (
-              <li key={product.id}>
-                <p className="font-medium text-2xl font-semibold absolute bg-white/70 p-4">
-                  {product.title}
-                </p>
-                <img
-                  className="w-full h-70 object-cover rounded shadow-xl"
-                  src={product.image.url}
-                  alt={product.image.alt || product.title}
-                />
-              </li>
+              <ProductCard key={product.id} product={product} />
             ))}
           </ul>
         )}
