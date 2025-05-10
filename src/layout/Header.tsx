@@ -1,9 +1,11 @@
 import { Link, NavLink } from 'react-router-dom'
 import Logo from '../assets/logo.png'
 import { useState } from 'react'
+import { useCartStore } from '../store/cart'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const cartCount = useCartStore((state) => state.cart.length)
 
   return (
     <header className="bg-white shadow-md relative z-20">
@@ -41,6 +43,9 @@ export function Header() {
                 }
               >
                 CART
+                {cartCount > 0 && (
+                  <span className="text-xs">({cartCount})</span>
+                )}
               </NavLink>
             </li>
           </ul>
@@ -82,7 +87,10 @@ export function Header() {
             </li>
             <li>
               <NavLink to="/cart" onClick={() => setIsMenuOpen(false)}>
-                CART
+                CART{' '}
+                {cartCount > 0 && (
+                  <span className="text-xs">({cartCount})</span>
+                )}
               </NavLink>
             </li>
           </ul>

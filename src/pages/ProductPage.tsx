@@ -4,6 +4,7 @@ import type { TProduct } from '../types/product'
 import { ProductImage } from '../components/product/ProductImage'
 import { ProductReviews } from '../components/product/ProductReviews'
 import { ProductInfo } from '../components/product/ProductInfo'
+import { useCartStore } from '../store/cart'
 
 export function ProductPage() {
   const { id } = useParams<{ id: string }>()
@@ -25,6 +26,8 @@ export function ProductPage() {
     fetchProduct()
   }, [id])
 
+  const addToCart = useCartStore((state) => state.addToCart)
+
   if (loading) return <p className="p-4">Loading product...</p>
   if (!product) return <p className="p-4">Product not found.</p>
 
@@ -43,7 +46,10 @@ export function ProductPage() {
         />
         <ProductReviews reviews={product.reviews} />
 
-        <button className="bg-dark text-white px-6 py-2 rounded font-semibold">
+        <button
+          onClick={() => addToCart(product)}
+          className="bg-dark text-white px-6 py-2 rounded font-semibold"
+        >
           Add to Cart
         </button>
       </div>
