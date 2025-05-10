@@ -19,7 +19,7 @@ export function Header() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? 'border-b-2 border-black' : ''
+                  isActive ? 'border-b-2 border-black' : 'hover:font-semibold'
                 }
               >
                 HOME
@@ -29,7 +29,7 @@ export function Header() {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  isActive ? 'border-b-2 border-black' : ''
+                  isActive ? 'border-b-2 border-black' : 'hover:font-semibold'
                 }
               >
                 CONTACT
@@ -39,7 +39,7 @@ export function Header() {
               <NavLink
                 to="/cart"
                 className={({ isActive }) =>
-                  isActive ? 'border-b-2 border-black' : ''
+                  isActive ? 'border-b-2 border-black' : 'hover:font-semibold'
                 }
               >
                 CART

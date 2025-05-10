@@ -48,7 +48,7 @@ export function ProductPage() {
 
         <button
           onClick={() => addToCart(product)}
-          className="bg-dark text-white px-6 py-2 rounded font-semibold"
+          className="bg-primary text-white px-6 py-2 rounded font-semibold"
         >
           Add to Cart
         </button>
