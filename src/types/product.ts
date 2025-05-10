@@ -4,6 +4,14 @@ export type TProduct = {
   description: string
   price: number
   discountedPrice: number
+  reviews: [
+    {
+      id: string
+      username: string
+      rating: number
+      description: string
+    },
+  ]
   image: {
     url: string
     alt: string

@@ -5,13 +5,13 @@ type Props = {
 
 export function SearchBar({ value, onChange }: Props) {
   return (
-    <div className="bg-primary p-10">
+    <div className="bg-primary p-10 text-center">
       <input
         type="text"
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder="Search for a product..."
-        className="w-full bg-white max-w-md p-2 rounded"
+        className="w-full bg-white max-w-3xl p-2 rounded"
       />
     </div>
   )
