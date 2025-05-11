@@ -10,11 +10,11 @@ export function CartItem({ product }: Props) {
       <img
         src={product.image.url}
         alt={product.image.alt || product.title}
-        className="w-20 h-20 object-cover rounded"
+        className="w-20 h-20 object-cover rounded shadow-xl"
       />
-      <div>
-        <h3>{product.title}</h3>
-        <p>{product.price} NOK</p>
+      <div className="font-main">
+        <h3 className="text-sm font-bold mt-3">{product.title}</h3>
+        <p className="text-sm text-gray-600">{product.price} NOK</p>
       </div>
     </div>
   )

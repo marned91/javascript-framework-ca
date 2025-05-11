@@ -12,6 +12,7 @@
   --color-primary: #353abd;
   --color-light: #d3d6dc;
   --color-dark: #3e3e3e;
+  --color-darkHover: #1c21bd;
 
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
