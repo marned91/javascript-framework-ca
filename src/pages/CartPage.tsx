@@ -2,7 +2,7 @@ import { useCartStore } from '../store/cart'
 import { useNavigate } from 'react-router-dom'
 import { CartSummary } from '../components/cart/CartSummary'
 import { CartList } from '../components/cart/CartList'
-import { EmptyCart } from '../components/cart/Emptycart'
+import { EmptyCart } from '../components/cart/EmptyCart'
 
 export function CartPage() {
   const cart = useCartStore((state) => state.cart)
