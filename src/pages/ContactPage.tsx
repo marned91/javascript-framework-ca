@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
+import { FormInput } from '../components/form/FormInput'
+import { FormTextarea } from '../components/form/FormTextarea'
 
 export function ContactPage() {
   const [fullName, setFullName] = useState('')
@@ -73,66 +75,46 @@ export function ContactPage() {
       <div className="bg-white p-8 rounded-lg shadow-xl w-full max-w-md">
         <h1 className="text-3xl font-semibold mb-6 text-center">Contact Us</h1>
         {submit && (
-          <p className="font-main mb-3">✅ Message sent successfully!</p>
+          <div className="bg-green-100 text-green-800 text-sm rounded-md p-3 text-center mb-4">
+            <span className="text-lg">✅</span> Message sent successfully!
+          </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-5 font-main">
-          <div>
-            <label className=" block font-semibold mb-1">Full Name</label>
-            <input
-              value={fullName}
-              onChange={(event) => setFullName(event.target.value)}
-              className="w-full p-2 border rounded mb-5"
-            />
+          <FormInput
+            label="Full Name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            error={error.fullName}
+          />
 
-            {error.fullName && (
-              <p className="text-red-500 text-sm mt-1">{error.fullName}</p>
-            )}
+          <FormInput
+            label="Subject"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+            error={error.subject}
+          />
 
-            <label className="block font-semibold mb-1">Subject</label>
-            <input
-              value={subject}
-              onChange={(event) => setSubject(event.target.value)}
-              className="w-full p-2 border rounded"
-            />
+          <FormInput
+            label="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            error={error.email}
+          />
 
-            {error.subject && (
-              <p className="text-red-500 text-sm mt-1">{error.subject}</p>
-            )}
-          </div>
+          <FormTextarea
+            label="Message"
+            value={body}
+            onChange={(e) => setBody(e.target.value)}
+            error={error.body}
+          />
 
-          <div>
-            <label className="block font-semibold mb-1">Email</label>
-            <input
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              className="w-full p-2 border rounded mb-5"
-            />
-
-            {error.email && (
-              <p className="text-red-500 text-sm mt-1">{error.email}</p>
-            )}
-
-            <div>
-              <label className="block font-semibold mb-1">Message</label>
-              <textarea
-                value={body}
-                onChange={(event) => setBody(event.target.value)}
-                className="w-full p-2 border rounded min-h-[100px] mb-5"
-              />
-
-              {error.body && (
-                <p className="text-red-500 text-sm mt-1">{error.body}</p>
-              )}
-
-              <button
-                type="submit"
-                className="bg-primary hover:bg-darkHover font-navButtons text-white px-6 py-2 rounded w-full"
-              >
-                Send
-              </button>
-            </div>
-          </div>
+          <button
+            type="submit"
+            className="bg-primary hover:bg-darkHover font-navButtons text-white px-6 py-2 rounded w-full"
+          >
+            Send
+          </button>
         </form>
       </div>
     </div>
