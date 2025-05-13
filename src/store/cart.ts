@@ -13,7 +13,9 @@ type CartState = {
    */
   addToCart: (product: TProduct) => void
   /**
-   * Removes a product from the cart by its ID.
+   * Removes the first matching product with the given ID from the cart.
+   * If multiple of the same product are in the cart, only one is removed.
+   *
    * @param id - The ID of the product to remove
    */
   removeFromCart: (id: string) => void
@@ -31,8 +33,13 @@ export const useCartStore = create<CartState>((set) => ({
       cart: [...state.cart, product],
     })),
   removeFromCart: (id) =>
-    set((state) => ({
-      cart: state.cart.filter((item) => item.id !== id),
-    })),
+    set((state) => {
+      const index = state.cart.findIndex((item) => item.id === id)
+      if (index === -1) return state
+
+      const newCart = [...state.cart]
+      newCart.splice(index, 1)
+      return { cart: newCart }
+    }),
   clearCart: () => set({ cart: [] }),
 }))
