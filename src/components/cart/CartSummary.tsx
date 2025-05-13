@@ -3,6 +3,17 @@ type Props = {
   onCheckout: () => void
 }
 
+/**
+ * Displays a cart summary panel with:
+ * - Total product cost
+ * - Shipping info (free)
+ * - "Buy Now" button to proceed to checkout
+ *
+ * Used on the <CartPage /> as the final checkout section.
+ *
+ * @param {Props} props - Total price and checkout handler
+ * @returns {JSX.Element} The rendered cart summary section
+ */
 export function CartSummary({ total, onCheckout }: Props) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-xl flex flex-col justify-between">

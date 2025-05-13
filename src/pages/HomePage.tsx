@@ -4,6 +4,17 @@ import { ProductCard } from '../components/ProductCard'
 import { HeroSection } from '../components/HeroSection'
 import { SearchBar } from '../components/SearchBar'
 
+/**
+ * Home page component that displays:
+ * - A hero section with a scroll button
+ * - A search bar with lookahead filtering
+ * - A grid of all products fetched from the Noroff API
+ *
+ * Products can be filtered by title. On clicking the hero button,
+ * the page scrolls smoothly to the product list.
+ *
+ * @returns {JSX.Element} The rendered homepage
+ */
 export function HomePage() {
   const [products, setProducts] = useState<TProduct[]>([])
   const [loading, setLoading] = useState(true)

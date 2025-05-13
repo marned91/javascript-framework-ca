@@ -5,6 +5,14 @@ type Props = {
   error?: string
 }
 
+/**
+ * A reusable controlled textarea component with label and optional error display.
+ *
+ * Used in ContactPage where multi-line input is required.
+ *
+ * @param {Props} props - Textarea config including label, value, and validation message
+ * @returns {JSX.Element} The rendered textarea block
+ */
 export function FormTextarea({ label, value, onChange, error }: Props) {
   return (
     <div>

@@ -1,5 +1,12 @@
 import { Link } from 'react-router-dom'
 
+/**
+ * Displays a message when the cart is empty.
+ *
+ * Used in the <CartPage /> when there are no items in the cart.
+ *
+ * @returns {JSX.Element} The rendered empty cart UI
+ */
 export function EmptyCart() {
   return (
     <div className="bg-light px-4 py-40 flex justify-center">

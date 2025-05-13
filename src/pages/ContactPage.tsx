@@ -3,6 +3,18 @@ import React from 'react'
 import { FormInput } from '../components/form/FormInput'
 import { FormTextarea } from '../components/form/FormTextarea'
 
+/**
+ * Renders a contact form with validation for:
+ * - Full name
+ * - Subject
+ * - Email
+ * - Message body
+ *
+ * On valid submission, logs form data to the console and resets the form.
+ * Displays a success message if the form was submitted.
+ *
+ * @returns {JSX.Element} The rendered ContactPage
+ */
 export function ContactPage() {
   const [fullName, setFullName] = useState('')
   const [subject, setSubject] = useState('')
@@ -21,6 +33,13 @@ export function ContactPage() {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
   }
 
+  /**
+   * Handles form submission with validation.
+   * Prevents default form behavior, checks for input errors,
+   * logs form data to the console, and clears fields if valid.
+   *
+   * @param event - The form submission event
+   */
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault()
     let hasError = false

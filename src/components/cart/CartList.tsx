@@ -5,6 +5,14 @@ type Props = {
   cart: TProduct[]
 }
 
+/**
+ * Renders a vertical list of all items currently in the cart.
+ *
+ * Uses the <CartItem /> component to display each individual product.
+ *
+ * @param {Props} props - The array of cart items
+ * @returns {JSX.Element} The rendered cart item list
+ */
 export function CartList({ cart }: Props) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-xl flex flex-col">

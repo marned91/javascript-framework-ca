@@ -4,6 +4,17 @@ import { useState } from 'react'
 import { useCartStore } from '../store/cart'
 import { ShoppingBag } from 'lucide-react'
 
+/**
+ * Renders the global header component, including:
+ * - Logo linking to the homepage
+ * - Navigation links for "Home", "Contact", and "Cart"
+ * - A dynamic cart icon showing item count
+ * - A responsive mobile menu toggle (hamburger icon)
+ *
+ * Uses Zustand to retrieve cart item count.
+ *
+ * @returns {JSX.Element} The rendered header with nav and cart icon
+ */
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const cartCount = useCartStore((state) => state.cart.length)

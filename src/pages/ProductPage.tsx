@@ -6,6 +6,14 @@ import { ProductReviews } from '../components/product/ProductReviews'
 import { ProductInfo } from '../components/product/ProductInfo'
 import { useCartStore } from '../store/cart'
 
+/**
+ * Displays a single product's details using a dynamic route param (:id).
+ *
+ * Fetches product data from the Noroff API, shows title, image, description, price,
+ * reviews (if available), and includes an "Add to Cart" button that updates the Zustand store.
+ *
+ * @returns {JSX.Element} The rendered product page.
+ */
 export function ProductPage() {
   const { id } = useParams<{ id: string }>()
   const [product, setProduct] = useState<TProduct | null>(null)

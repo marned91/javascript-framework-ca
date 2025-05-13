@@ -4,6 +4,18 @@ type props = {
   onScrollClick: () => void
 }
 
+/**
+ * Hero banner component displayed at the top of the homepage.
+ *
+ * Includes:
+ * - A background image
+ * - A centered message and "Shop Now" button
+ * - When clicked, the button triggers the `onScrollClick` callback
+ *   to smoothly scroll to the product list section.
+ *
+ * @param {props} props - Contains a scroll handler for the CTA
+ * @returns {JSX.Element} The rendered hero section
+ */
 export function HeroSection({ onScrollClick }: props) {
   return (
     <div className="relative">

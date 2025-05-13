@@ -5,6 +5,17 @@ type Props = {
   product: TProduct
 }
 
+/**
+ * Displays a single product in the cart, including:
+ * - Product image
+ * - Title and price
+ * - A remove button that removes the item from the cart store
+ *
+ * Uses Zustand for cart state management.
+ *
+ * @param {Props} props - The product to render in the cart
+ * @returns {JSX.Element} The rendered cart item row
+ */
 export function CartItem({ product }: Props) {
   const removeFromCart = useCartStore((state) => state.removeFromCart)
 

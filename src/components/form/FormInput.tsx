@@ -5,6 +5,14 @@ type Props = {
   error?: string
 }
 
+/**
+ * A reusable controlled input field with label and optional error display.
+ *
+ * Used in ContactPage for short, single-line inputs.
+ *
+ * @param {Props} props - Input config including label, value, and validation message
+ * @returns {JSX.Element} The rendered input field
+ */
 export function FormInput({ label, value, onChange, error }: Props) {
   return (
     <div>

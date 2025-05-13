@@ -4,6 +4,16 @@ import { CartSummary } from '../components/cart/CartSummary'
 import { CartList } from '../components/cart/CartList'
 import { EmptyCart } from '../components/cart/EmptyCart'
 
+/**
+ * Displays the Cart page with:
+ * - A list of products in the cart
+ * - The total price
+ * - A "Buy Now" button that navigates to the checkout success page
+ *
+ * If the cart is empty, shows the <EmptyCart /> component instead.
+ *
+ * @returns {JSX.Element} The rendered cart page
+ */
 export function CartPage() {
   const cart = useCartStore((state) => state.cart)
   const navigate = useNavigate()

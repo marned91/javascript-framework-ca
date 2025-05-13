@@ -5,6 +5,17 @@ type Props = {
   orderNumber: string
 }
 
+/**
+ * Displays a thank-you message after a successful checkout.
+ *
+ * Includes:
+ * - A fullscreen background image
+ * - Order number for confirmation
+ * - A link to go back to the homepage
+ *
+ * @param {Props} props - Image and order number for confirmation
+ * @returns {JSX.Element} The rendered thank-you message section
+ */
 export function ThankYouMessage({ image, orderNumber }: Props) {
   return (
     <div

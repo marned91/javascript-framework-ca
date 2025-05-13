@@ -6,6 +6,21 @@ import { CheckoutSuccessPage } from './pages/CheckoutSuccessPage'
 import { ContactPage } from './pages/ContactPage'
 import { ProductPage } from './pages/ProductPage'
 
+/**
+ * Main application component that defines all routes using React Router.
+ *
+ * Routes:
+ * - /              → HomePage (inside Layout)
+ * - /contact       → ContactPage
+ * - /cart          → CartPage
+ * - /product/:id   → ProductPage (dynamic)
+ * - /success       → CheckoutSuccessPage
+ *
+ * Wrapped in a <Layout /> which provides the Header and Footer.
+ *
+ * @returns {JSX.Element} The route definitions for the app.
+ */
+
 function App() {
   return (
     <Routes>

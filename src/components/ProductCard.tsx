@@ -6,6 +6,18 @@ type Props = {
   product: TProduct
 }
 
+/**
+ * Displays a single product card with:
+ * - Product title
+ * - Image with alt text
+ * - Price and discount info (via <ProductPrice />)
+ *
+ * The entire card is wrapped in a <Link> to the product's detail page.
+ * Adds hover scale animation for interactivity.
+ *
+ * @param {Props} props - Contains a TProduct to display
+ * @returns {JSX.Element} The rendered product card
+ */
 export function ProductCard({ product }: Props) {
   return (
     <li className="relative transition duration-300 ease-out hover:scale-105 cursor-pointer">

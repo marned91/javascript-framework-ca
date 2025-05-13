@@ -7,6 +7,17 @@ type Props = {
   discountedPrice: number
 }
 
+/**
+ * Displays the core product details:
+ * - Product title
+ * - Discounted price (with optional discount messaging via <ProductPrice />)
+ * - Description text
+ *
+ * Typically used in the main product page layout.
+ *
+ * @param {Props} props - Product details to render
+ * @returns {JSX.Element} The rendered product info section
+ */
 export function ProductInfo({
   title,
   description,

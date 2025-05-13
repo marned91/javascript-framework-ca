@@ -3,6 +3,19 @@ type Props = {
   discountedPrice: number
 }
 
+/**
+ * Displays product pricing and discount information.
+ *
+ * If the discounted price is lower than the original price:
+ * - Shows the original price as struck-through
+ * - Shows the discounted price
+ * - Calculates and displays the discount percentage
+ *
+ * If there's no discount, it shows only the original price.
+ *
+ * @param {Props} props - The price and discounted price
+ * @returns {JSX.Element} The rendered price block
+ */
 export function ProductPrice({ price, discountedPrice }: Props) {
   const hasDiscount = discountedPrice < price
   const discount = hasDiscount

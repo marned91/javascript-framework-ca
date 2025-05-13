@@ -4,6 +4,18 @@ type Props = {
   reviews: TProduct['reviews']
 }
 
+/**
+ * Displays a scrollable list of customer reviews for a product.
+ *
+ * If no reviews are available, nothing is rendered.
+ * Each review includes:
+ * - Username
+ * - Star rating out of 5
+ * - Description
+ *
+ * @param {Props} props - The product's review list
+ * @returns {JSX.Element | null} The rendered review section, or nothing if empty
+ */
 export function ProductReviews({ reviews }: Props) {
   if (!reviews?.length) return null
 
