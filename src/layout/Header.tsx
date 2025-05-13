@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom'
 import Logo from '../assets/logo.png'
 import { useState } from 'react'
 import { useCartStore } from '../store/cart'
+import { ShoppingBag } from 'lucide-react'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -39,12 +40,14 @@ export function Header() {
               <NavLink
                 to="/cart"
                 className={({ isActive }) =>
-                  isActive ? 'border-b-2 border-black' : 'hover:font-semibold'
+                  `relative flex items-center gap-1 ${isActive ? 'border-b-2 border-black' : 'hover:font-semibold'}`
                 }
               >
-                CART
+                <ShoppingBag className="w-5 h-5" />
                 {cartCount > 0 && (
-                  <span className="text-xs">({cartCount})</span>
+                  <span className="absolute -top-1 -right-2 bg-dark text-white text-[10px] px-1.5 py-0.5 rounded-full">
+                    {cartCount}
+                  </span>
                 )}
               </NavLink>
             </li>
@@ -86,10 +89,16 @@ export function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/cart" onClick={() => setIsMenuOpen(false)}>
-                CART{' '}
+              <NavLink
+                to="/cart"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center gap-1"
+              >
+                <ShoppingBag className="w-5 h-5" />
                 {cartCount > 0 && (
-                  <span className="text-xs">({cartCount})</span>
+                  <span className="bg-dark text-white text-[10px] px-1.5 py-0.5 rounded-full">
+                    {cartCount}
+                  </span>
                 )}
               </NavLink>
             </li>
