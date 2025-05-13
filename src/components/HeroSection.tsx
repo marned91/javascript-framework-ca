@@ -13,7 +13,7 @@ export function HeroSection({ onScrollClick }: props) {
         </h1>
         <button
           onClick={onScrollClick}
-          className="mt-4 px-6 py-2 bg-dark text-white font-bold rounded cursor-pointer hover:bg-black"
+          className="mt-4 px-6 py-2 bg-dark text-white font-bold rounded cursor-pointer hover:bg-black font-navButtons"
         >
           Shop Now
         </button>

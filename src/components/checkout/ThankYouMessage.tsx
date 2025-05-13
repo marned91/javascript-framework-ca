@@ -18,9 +18,9 @@ export function ThankYouMessage({ image, orderNumber }: Props) {
         </p>
         <Link
           to="/"
-          className="bg-dark hover:bg-black text-white px-6 py-3 rounded-md font-navButtons mt-6"
+          className="mt-4 px-6 py-2 bg-dark text-white font-bold rounded cursor-pointer hover:bg-black font-navButtons"
         >
-          Show Now
+          Shop More!
         </Link>
       </div>
     </div>
