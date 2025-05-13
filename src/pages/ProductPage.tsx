@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import type { TProduct } from '../types/product'
-import { ProductImage } from '../components/product/ProductImage'
-import { ProductReviews } from '../components/product/ProductReviews'
-import { ProductInfo } from '../components/product/ProductInfo'
-import { useCartStore } from '../store/cart'
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import type { TProduct } from "../types/product";
+import { ProductImage } from "../components/product/ProductImage";
+import { ProductReviews } from "../components/product/ProductReviews";
+import { ProductInfo } from "../components/product/ProductInfo";
+import { useCartStore } from "../store/cart";
 
 /**
  * Displays a single product's details using a dynamic route param (:id).
@@ -15,29 +15,29 @@ import { useCartStore } from '../store/cart'
  * @returns {JSX.Element} The rendered product page.
  */
 export function ProductPage() {
-  const { id } = useParams<{ id: string }>()
-  const [product, setProduct] = useState<TProduct | null>(null)
-  const [loading, setLoading] = useState(true)
+  const { id } = useParams<{ id: string }>();
+  const [product, setProduct] = useState<TProduct | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchProduct() {
       try {
-        const res = await fetch(`https://v2.api.noroff.dev/online-shop/${id}`)
-        const json = await res.json()
-        setProduct(json.data)
+        const res = await fetch(`https://v2.api.noroff.dev/online-shop/${id}`);
+        const json = await res.json();
+        setProduct(json.data);
       } catch (error) {
-        console.error('Failed to fetch product:', error)
+        console.error("Failed to fetch product:", error);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
-    fetchProduct()
-  }, [id])
+    fetchProduct();
+  }, [id]);
 
-  const addToCart = useCartStore((state) => state.addToCart)
+  const addToCart = useCartStore((state) => state.addToCart);
 
-  if (loading) return <p className="p-4">Loading product...</p>
-  if (!product) return <p className="p-4">Product not found.</p>
+  if (loading) return <p className="p-4">Loading product...</p>;
+  if (!product) return <p className="p-4">Product not found.</p>;
 
   return (
     <div className="bg-light flex flex-col-reverse md:flex-row-reverse justify-center py-20 px-5 md:gap-4">
@@ -62,5 +62,5 @@ export function ProductPage() {
         </button>
       </div>
     </div>
-  )
+  );
 }

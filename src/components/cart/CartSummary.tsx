@@ -1,7 +1,7 @@
 type Props = {
-  total: number
-  onCheckout: () => void
-}
+  total: number;
+  onCheckout: () => void;
+};
 
 /**
  * Displays a cart summary panel with:
@@ -35,5 +35,5 @@ export function CartSummary({ total, onCheckout }: Props) {
         Buy Now!
       </button>
     </div>
-  )
+  );
 }

@@ -3,33 +3,33 @@
  */
 export type TProduct = {
   /** Unique product ID (UUID format) */
-  id: string
+  id: string;
   /** Product title/name */
-  title: string
+  title: string;
   /** Description of the product */
-  description: string
+  description: string;
   /** Original full price */
-  price: number
+  price: number;
   /** Discounted price, used for display if lower than `price` */
-  discountedPrice: number
+  discountedPrice: number;
   /** List of customer reviews */
   reviews: [
     {
       /** Unique review ID */
-      id: string
+      id: string;
       /** Username of the reviewer */
-      username: string
+      username: string;
       /** Rating */
-      rating: number
+      rating: number;
       /** The review text */
-      description: string
+      description: string;
     },
-  ]
+  ];
   /** Product image data */
   image: {
     /** Image URL */
-    url: string
+    url: string;
     /** Alt text for accessibility */
-    alt: string
-  }
-}
+    alt: string;
+  };
+};

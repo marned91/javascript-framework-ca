@@ -1,10 +1,10 @@
-import { Routes, Route } from 'react-router-dom'
-import { Layout } from './layout/Layout'
-import { HomePage } from './pages/HomePage'
-import { CartPage } from './pages/CartPage'
-import { CheckoutSuccessPage } from './pages/CheckoutSuccessPage'
-import { ContactPage } from './pages/ContactPage'
-import { ProductPage } from './pages/ProductPage'
+import { Routes, Route } from "react-router-dom";
+import { Layout } from "./layout/Layout";
+import { HomePage } from "./pages/HomePage";
+import { CartPage } from "./pages/CartPage";
+import { CheckoutSuccessPage } from "./pages/CheckoutSuccessPage";
+import { ContactPage } from "./pages/ContactPage";
+import { ProductPage } from "./pages/ProductPage";
 
 /**
  * Main application component that defines all routes using React Router.
@@ -32,7 +32,7 @@ function App() {
         <Route path="success" element={<CheckoutSuccessPage />} />
       </Route>
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;

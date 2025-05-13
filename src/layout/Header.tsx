@@ -1,8 +1,8 @@
-import { Link, NavLink } from 'react-router-dom'
-import Logo from '../assets/logo.png'
-import { useState } from 'react'
-import { useCartStore } from '../store/cart'
-import { ShoppingBag } from 'lucide-react'
+import { Link, NavLink } from "react-router-dom";
+import Logo from "../assets/logo.png";
+import { useState } from "react";
+import { useCartStore } from "../store/cart";
+import { ShoppingBag } from "lucide-react";
 
 /**
  * Renders the global header component, including:
@@ -16,8 +16,8 @@ import { ShoppingBag } from 'lucide-react'
  * @returns {JSX.Element} The rendered header with nav and cart icon
  */
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const cartCount = useCartStore((state) => state.cart.length)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const cartCount = useCartStore((state) => state.cart.length);
 
   return (
     <header className="bg-white shadow-md relative z-20">
@@ -31,7 +31,7 @@ export function Header() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? 'border-b-2 border-black' : 'hover:font-semibold'
+                  isActive ? "border-b-2 border-black" : "hover:font-semibold"
                 }
               >
                 HOME
@@ -41,7 +41,7 @@ export function Header() {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  isActive ? 'border-b-2 border-black' : 'hover:font-semibold'
+                  isActive ? "border-b-2 border-black" : "hover:font-semibold"
                 }
               >
                 CONTACT
@@ -51,7 +51,7 @@ export function Header() {
               <NavLink
                 to="/cart"
                 className={({ isActive }) =>
-                  `relative flex items-center gap-1 ${isActive ? 'border-b-2 border-black' : 'hover:font-semibold'}`
+                  `relative flex items-center gap-1 ${isActive ? "border-b-2 border-black" : "hover:font-semibold"}`
                 }
               >
                 <ShoppingBag className="w-5 h-5" />
@@ -117,5 +117,5 @@ export function Header() {
         </nav>
       )}
     </header>
-  )
+  );
 }

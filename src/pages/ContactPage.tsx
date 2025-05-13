@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import React from 'react'
-import { FormInput } from '../components/form/FormInput'
-import { FormTextarea } from '../components/form/FormTextarea'
+import { useState } from "react";
+import React from "react";
+import { FormInput } from "../components/form/FormInput";
+import { FormTextarea } from "../components/form/FormTextarea";
 
 /**
  * Renders a contact form with validation for:
@@ -16,21 +16,21 @@ import { FormTextarea } from '../components/form/FormTextarea'
  * @returns {JSX.Element} The rendered ContactPage
  */
 export function ContactPage() {
-  const [fullName, setFullName] = useState('')
-  const [subject, setSubject] = useState('')
-  const [email, setEmail] = useState('')
-  const [body, setBody] = useState('')
+  const [fullName, setFullName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [email, setEmail] = useState("");
+  const [body, setBody] = useState("");
 
-  const [submit, setSubmit] = useState(false)
+  const [submit, setSubmit] = useState(false);
   const [error, setError] = useState({
-    fullName: '',
-    subject: '',
-    email: '',
-    body: '',
-  })
+    fullName: "",
+    subject: "",
+    email: "",
+    body: "",
+  });
 
   function validateEmail(email: string) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
   /**
@@ -41,51 +41,51 @@ export function ContactPage() {
    * @param event - The form submission event
    */
   function handleSubmit(event: React.FormEvent) {
-    event.preventDefault()
-    let hasError = false
+    event.preventDefault();
+    let hasError = false;
 
     const newError = {
-      fullName: '',
-      subject: '',
-      email: '',
-      body: '',
-    }
+      fullName: "",
+      subject: "",
+      email: "",
+      body: "",
+    };
 
     if (fullName.trim().length < 3) {
-      newError.fullName = 'Full name must be at least 3 characters'
-      hasError = true
+      newError.fullName = "Full name must be at least 3 characters";
+      hasError = true;
     }
 
     if (subject.trim().length < 3) {
-      newError.subject = 'Subject must be at least 3 characters'
-      hasError = true
+      newError.subject = "Subject must be at least 3 characters";
+      hasError = true;
     }
 
     if (!validateEmail(email)) {
-      newError.email = 'Please enter a valid email address'
-      hasError = true
+      newError.email = "Please enter a valid email address";
+      hasError = true;
     }
 
     if (body.trim().length < 3) {
-      newError.body = 'Message must be at least 3 characters'
-      hasError = true
+      newError.body = "Message must be at least 3 characters";
+      hasError = true;
     }
 
-    setError(newError)
+    setError(newError);
 
     if (!hasError) {
-      console.log('✅ Form submitted:', {
+      console.log("✅ Form submitted:", {
         fullName,
         subject,
         email,
         body,
-      })
+      });
 
-      setSubmit(true)
-      setFullName('')
-      setSubject('')
-      setEmail('')
-      setBody('')
+      setSubmit(true);
+      setFullName("");
+      setSubject("");
+      setEmail("");
+      setBody("");
     }
   }
 
@@ -137,5 +137,5 @@ export function ContactPage() {
         </form>
       </div>
     </div>
-  )
+  );
 }

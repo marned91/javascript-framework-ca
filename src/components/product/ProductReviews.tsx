@@ -1,8 +1,8 @@
-import type { TProduct } from '../../types/product'
+import type { TProduct } from "../../types/product";
 
 type Props = {
-  reviews: TProduct['reviews']
-}
+  reviews: TProduct["reviews"];
+};
 
 /**
  * Displays a scrollable list of customer reviews for a product.
@@ -17,7 +17,7 @@ type Props = {
  * @returns {JSX.Element | null} The rendered review section, or nothing if empty
  */
 export function ProductReviews({ reviews }: Props) {
-  if (!reviews?.length) return null
+  if (!reviews?.length) return null;
 
   return (
     <div className="mb-5">
@@ -36,5 +36,5 @@ export function ProductReviews({ reviews }: Props) {
         ))}
       </ul>
     </div>
-  )
+  );
 }

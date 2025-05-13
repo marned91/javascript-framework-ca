@@ -1,11 +1,11 @@
-import { ProductPrice } from '../ProductPrice'
+import { ProductPrice } from "../ProductPrice";
 
 type Props = {
-  title: string
-  description: string
-  price: number
-  discountedPrice: number
-}
+  title: string;
+  description: string;
+  price: number;
+  discountedPrice: number;
+};
 
 /**
  * Displays the core product details:
@@ -32,5 +32,5 @@ export function ProductInfo({
 
       <p className="font-main italic mb-5 max-w-md">{description}</p>
     </>
-  )
+  );
 }

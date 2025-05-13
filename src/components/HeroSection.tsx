@@ -1,8 +1,8 @@
-import Home from '../assets/home.png'
+import Home from "../assets/home.png";
 
 type props = {
-  onScrollClick: () => void
-}
+  onScrollClick: () => void;
+};
 
 /**
  * Hero banner component displayed at the top of the homepage.
@@ -36,5 +36,5 @@ export function HeroSection({ onScrollClick }: props) {
         className="w-full h-full"
       />
     </div>
-  )
+  );
 }

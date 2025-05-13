@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 /**
  * Displays a message when the cart is empty.
@@ -21,5 +21,5 @@ export function EmptyCart() {
         </Link>
       </div>
     </div>
-  )
+  );
 }

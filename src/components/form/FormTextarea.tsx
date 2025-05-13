@@ -1,9 +1,9 @@
 type Props = {
-  label: string
-  value: string
-  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
-  error?: string
-}
+  label: string;
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  error?: string;
+};
 
 /**
  * A reusable controlled textarea component with label and optional error display.
@@ -24,5 +24,5 @@ export function FormTextarea({ label, value, onChange, error }: Props) {
       />
       {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
     </div>
-  )
+  );
 }

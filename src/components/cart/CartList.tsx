@@ -1,9 +1,9 @@
-import { CartItem } from './CartItem'
-import type { TProduct } from '../../types/product'
+import { CartItem } from "./CartItem";
+import type { TProduct } from "../../types/product";
 
 type Props = {
-  cart: TProduct[]
-}
+  cart: TProduct[];
+};
 
 /**
  * Renders a vertical list of all items currently in the cart.
@@ -25,5 +25,5 @@ export function CartList({ cart }: Props) {
         ))}
       </div>
     </div>
-  )
+  );
 }

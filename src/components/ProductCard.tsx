@@ -1,10 +1,10 @@
-import type { TProduct } from '../types/product'
-import { Link } from 'react-router-dom'
-import { ProductPrice } from './ProductPrice'
+import type { TProduct } from "../types/product";
+import { Link } from "react-router-dom";
+import { ProductPrice } from "./ProductPrice";
 
 type Props = {
-  product: TProduct
-}
+  product: TProduct;
+};
 
 /**
  * Displays a single product card with:
@@ -38,5 +38,5 @@ export function ProductCard({ product }: Props) {
         </div>
       </Link>
     </li>
-  )
+  );
 }

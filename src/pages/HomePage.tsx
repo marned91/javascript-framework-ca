@@ -1,8 +1,8 @@
-import { useEffect, useState, useRef } from 'react'
-import type { TProduct } from '../types/product'
-import { ProductCard } from '../components/ProductCard'
-import { HeroSection } from '../components/HeroSection'
-import { SearchBar } from '../components/SearchBar'
+import { useEffect, useState, useRef } from "react";
+import type { TProduct } from "../types/product";
+import { ProductCard } from "../components/ProductCard";
+import { HeroSection } from "../components/HeroSection";
+import { SearchBar } from "../components/SearchBar";
 
 /**
  * Home page component that displays:
@@ -16,36 +16,36 @@ import { SearchBar } from '../components/SearchBar'
  * @returns {JSX.Element} The rendered homepage
  */
 export function HomePage() {
-  const [products, setProducts] = useState<TProduct[]>([])
-  const [loading, setLoading] = useState(true)
-  const [search, setSearch] = useState('')
+  const [products, setProducts] = useState<TProduct[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
-  const productSectionRef = useRef<HTMLElement | null>(null)
+  const productSectionRef = useRef<HTMLElement | null>(null);
 
   const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(search.toLowerCase())
-  )
+    product.title.toLowerCase().includes(search.toLowerCase()),
+  );
 
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await fetch('https://v2.api.noroff.dev/online-shop')
-        const json = await res.json()
-        setProducts(json.data)
+        const res = await fetch("https://v2.api.noroff.dev/online-shop");
+        const json = await res.json();
+        setProducts(json.data);
       } catch (error) {
-        console.error('Failed to fetch products:', error)
+        console.error("Failed to fetch products:", error);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
-    fetchProducts()
-  }, [])
+    fetchProducts();
+  }, []);
 
   return (
     <div>
       <HeroSection
         onScrollClick={() =>
-          productSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+          productSectionRef.current?.scrollIntoView({ behavior: "smooth" })
         }
       />
       <SearchBar value={search} onChange={setSearch} />
@@ -61,5 +61,5 @@ export function HomePage() {
         )}
       </section>
     </div>
-  )
+  );
 }

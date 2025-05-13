@@ -1,8 +1,8 @@
-import { useCartStore } from '../store/cart'
-import { useNavigate } from 'react-router-dom'
-import { CartSummary } from '../components/cart/CartSummary'
-import { CartList } from '../components/cart/CartList'
-import { EmptyCart } from '../components/cart/EmptyCart'
+import { useCartStore } from "../store/cart";
+import { useNavigate } from "react-router-dom";
+import { CartSummary } from "../components/cart/CartSummary";
+import { CartList } from "../components/cart/CartList";
+import { EmptyCart } from "../components/cart/EmptyCart";
 
 /**
  * Displays the Cart page with:
@@ -15,17 +15,17 @@ import { EmptyCart } from '../components/cart/EmptyCart'
  * @returns {JSX.Element} The rendered cart page
  */
 export function CartPage() {
-  const cart = useCartStore((state) => state.cart)
-  const navigate = useNavigate()
+  const cart = useCartStore((state) => state.cart);
+  const navigate = useNavigate();
 
-  const total = cart.reduce((sum, item) => sum + item.price, 0)
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
 
   const handleCheckout = () => {
-    navigate('/success')
-  }
+    navigate("/success");
+  };
 
   if (cart.length === 0) {
-    return <EmptyCart />
+    return <EmptyCart />;
   }
 
   return (
@@ -35,5 +35,5 @@ export function CartPage() {
         <CartSummary total={total} onCheckout={handleCheckout} />
       </div>
     </div>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import { Header } from './Header'
-import { Outlet } from 'react-router-dom'
-import { Footer } from './Footer'
+import { Header } from "./Header";
+import { Outlet } from "react-router-dom";
+import { Footer } from "./Footer";
 
 /**
  * Global layout component that wraps all routed pages.
@@ -23,5 +23,5 @@ export function Layout() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

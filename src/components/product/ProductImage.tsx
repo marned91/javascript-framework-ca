@@ -1,7 +1,7 @@
 type Props = {
-  src: string
-  alt: string
-}
+  src: string;
+  alt: string;
+};
 
 /**
  * Displays a styled product image.
@@ -21,5 +21,5 @@ export function ProductImage({ src, alt }: Props) {
         className="w-full h-100 md:h-130 object-cover shadow-xl"
       />
     </div>
-  )
+  );
 }

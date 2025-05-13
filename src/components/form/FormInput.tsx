@@ -1,9 +1,9 @@
 type Props = {
-  label: string
-  value: string
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  error?: string
-}
+  label: string;
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  error?: string;
+};
 
 /**
  * A reusable controlled input field with label and optional error display.
@@ -24,5 +24,5 @@ export function FormInput({ label, value, onChange, error }: Props) {
       />
       {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
     </div>
-  )
+  );
 }

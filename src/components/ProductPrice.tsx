@@ -1,7 +1,7 @@
 type Props = {
-  price: number
-  discountedPrice: number
-}
+  price: number;
+  discountedPrice: number;
+};
 
 /**
  * Displays product pricing and discount information.
@@ -17,10 +17,10 @@ type Props = {
  * @returns {JSX.Element} The rendered price block
  */
 export function ProductPrice({ price, discountedPrice }: Props) {
-  const hasDiscount = discountedPrice < price
+  const hasDiscount = discountedPrice < price;
   const discount = hasDiscount
     ? Math.round(((price - discountedPrice) / price) * 100)
-    : 0
+    : 0;
 
   return (
     <div>
@@ -32,5 +32,5 @@ export function ProductPrice({ price, discountedPrice }: Props) {
         <p className="text-primary font-main mb-2">Save {discount}%</p>
       )}
     </div>
-  )
+  );
 }

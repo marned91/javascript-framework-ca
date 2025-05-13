@@ -8,5 +8,5 @@ export function Footer() {
     <footer className="bg-dark text-white text-sm text-center py-6">
       &copy; {new Date().getFullYear()} CART. All rights reserved.
     </footer>
-  )
+  );
 }

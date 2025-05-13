@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Oxygen:wght@300;400;700&family=Quicksand:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Oxygen:wght@300;400;700&family=Quicksand:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
 
 @theme {
-  --font-main: 'Oxygen', 'sans-serif';
-  --font-large: 'Urbanist', 'sans-serif';
-  --font-medium: 'Quicksand', 'sans-serif';
-  --font-navButtons: 'DM Sans', 'sans-serif';
+  --font-main: "Oxygen", "sans-serif";
+  --font-large: "Urbanist", "sans-serif";
+  --font-medium: "Quicksand", "sans-serif";
+  --font-navButtons: "DM Sans", "sans-serif";
 
   --breakpoint-3xl: 120rem;
 

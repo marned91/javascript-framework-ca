@@ -1,9 +1,9 @@
-import { useCartStore } from '../../store/cart'
-import type { TProduct } from '../../types/product'
+import { useCartStore } from "../../store/cart";
+import type { TProduct } from "../../types/product";
 
 type Props = {
-  product: TProduct
-}
+  product: TProduct;
+};
 
 /**
  * Displays a single product in the cart, including:
@@ -17,7 +17,7 @@ type Props = {
  * @returns {JSX.Element} The rendered cart item row
  */
 export function CartItem({ product }: Props) {
-  const removeFromCart = useCartStore((state) => state.removeFromCart)
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
 
   return (
     <div className="relative flex gap-3 items-center">
@@ -38,5 +38,5 @@ export function CartItem({ product }: Props) {
         <p className="text-sm text-gray-600">{product.price} NOK</p>
       </div>
     </div>
-  )
+  );
 }

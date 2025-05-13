@@ -1,7 +1,7 @@
 type Props = {
-  value: string
-  onChange: (value: string) => void
-}
+  value: string;
+  onChange: (value: string) => void;
+};
 
 /**
  * A controlled input field for searching products by title.
@@ -23,5 +23,5 @@ export function SearchBar({ value, onChange }: Props) {
         className="w-full bg-white max-w-3xl p-2 rounded"
       />
     </div>
-  )
+  );
 }

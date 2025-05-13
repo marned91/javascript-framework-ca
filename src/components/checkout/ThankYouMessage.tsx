@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 type Props = {
-  image: string
-  orderNumber: string
-}
+  image: string;
+  orderNumber: string;
+};
 
 /**
  * Displays a thank-you message after a successful checkout.
@@ -35,5 +35,5 @@ export function ThankYouMessage({ image, orderNumber }: Props) {
         </Link>
       </div>
     </div>
-  )
+  );
 }
