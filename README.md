@@ -84,7 +84,7 @@ Live site:
 ### Clone the repository
 
 ```bash
-git clone https://github.com/marned91/react-semester-project2.git
+git clone https://github.com/marned91/javascript-framework-ca
 ```
 
 ### Install dependencies
