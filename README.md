@@ -75,7 +75,7 @@ This store is designed for general users looking to browse and buy products. The
 The project is deployed using Netlify and supports dynamic routing.
 
 Live site:  
-[https://your-netlify-site.netlify.app](https://cart-js-framework.netlify.app/)
+[CART Deployed site](https://cart-js-framework.netlify.app/)
 
 ---
 
