@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
  */
 export function EmptyCart() {
   return (
-    <div className="bg-light px-4 py-40 flex justify-center">
-      <div className="bg-white text-center p-10 rounded-lg shadow-xl max-w-md w-full">
+    <div className="bg-light px-4 py-40 flex justify-center min-h-screen">
+      <div className="bg-white text-center p-10 rounded-lg shadow-xl max-w-md w-full h-[60%]">
         <div className="text-6xl mb-6">😅</div>
         <h2 className="text-xl font-semibold mb-10">Your Cart is Empty!</h2>
         <Link

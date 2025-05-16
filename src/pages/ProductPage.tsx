@@ -46,7 +46,7 @@ export function ProductPage() {
   if (!product) return <p className="p-4">Product not found.</p>;
 
   return (
-    <div className="bg-light relative">
+    <div className="bg-light relative flex flex-col min-h-screen">
       {added && (
         <div className="absolute top-5 left-1/2 transform -translate-x-1/2 z-10">
           <div className="bg-green-100 text-green-800 text-sm rounded-md px-4 py-2 shadow-md">

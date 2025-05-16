@@ -29,7 +29,7 @@ export function CartPage() {
   }
 
   return (
-    <div className="p-4 md:p-8 bg-gray-300 min-h-screen">
+    <div className="p-4 md:p-8 bg-light min-h-screen">
       <div className="max-w-xl md:max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-15">
         <CartList cart={cart} />
         <CartSummary total={total} onCheckout={handleCheckout} />
