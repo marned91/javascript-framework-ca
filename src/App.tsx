@@ -30,6 +30,14 @@ function App() {
         <Route path="cart" element={<CartPage />} />
         <Route path="product/:id" element={<ProductPage />} />
         <Route path="success" element={<CheckoutSuccessPage />} />
+        <Route
+          path="*"
+          element={
+            <h1 className="text-center text-3xl font-large pt-10">
+              404 Not Found
+            </h1>
+          }
+        />
       </Route>
     </Routes>
   );
